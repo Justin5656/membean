@@ -1,11 +1,16 @@
 package membean.gui;
 
+
 import membean.util.Reference;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
 import org.lwjgl.system.*;
 
-
+/**
+ * Manages the game window.
+ *
+ * @version 0.1.0
+ */
 public class Window {
     /**
      * Creates an error callback.
@@ -34,7 +39,7 @@ public class Window {
         GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, GL11.GL_FALSE);
 
         window = GLFW.glfwCreateWindow(Reference.WINDOW_WIDTH, Reference.WINDOW_HEIGHT,
-                "Membean: The RPG", MemoryUtil.NULL, MemoryUtil.NULL);
+                Reference.NAME, MemoryUtil.NULL, MemoryUtil.NULL);
 
         if (window == MemoryUtil.NULL) {
             System.err.println("Unable to create a window");
@@ -48,6 +53,9 @@ public class Window {
         start();
     }
 
+    /**
+     * The entry point for the game and the game loop.
+     */
     public void start() {
         float now, last = 0f, delta;
 
@@ -75,15 +83,31 @@ public class Window {
         System.exit(0);
     }
 
+    /**
+     * Initializes the game.
+     */
     private void init() {
     }
 
+    /**
+     * Controls all updates of the gamestate.
+     *
+     * @param delta Time since the last update.
+     */
     private void update(double delta) {
     }
 
+    /**
+     * Controls all updates of the rendered screen.
+     *
+     * @param delta Time since the last update.
+     */
     private void render(double delta) {
     }
 
+    /**
+     * Closes down the game.
+     */
     private void dispose() {
     }
 }
